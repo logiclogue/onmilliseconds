@@ -15,6 +15,14 @@ the same.
 npm i --save onmilliseconds
 ```
 
+## Usage
+
+```
+var timeoutID = onMilliseconds(function[, delay, param1, param2, ...]);
+var timeoutID = onMilliseconds(function[, delay]);
+var timeoutID = onMilliseconds(code[, delay]);
+```
+
 ## Example
 
 ```
