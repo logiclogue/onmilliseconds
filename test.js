@@ -22,12 +22,12 @@ context('200 milliseconds', function () {
         onMilliseconds(() => {
             diff = Date.now() - startTime;
 
-            done(assert.isTrue(diff > 200));
+            done(assert.isTrue(diff >= 200));
         }, 200);
     });
 });
 
-context('0x80000000ms', function () {
+context('0x80000000 milliseconds', function () {
     it('should not callback within 200ms', function (done) {
         this.timeout(210);
         this.slow(210);
@@ -43,7 +43,12 @@ context('0x80000000ms', function () {
 });
 
 context('extra parameters are passed', function () {
-    it('should callback with the parameters', function () {
-        
+    it('should callback with the parameters', function (done) {
+        onMilliseconds((x, y) => {
+            assert.equal(x, 5);
+            assert.equal(y, 2);
+
+            done();
+        }, 0, 5, 2);
     });
 });
