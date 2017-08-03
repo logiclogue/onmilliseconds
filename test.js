@@ -41,3 +41,9 @@ context('0x80000000ms', function () {
         }, 200);
     });
 });
+
+context('extra parameters are passed', function () {
+    it('should callback with the parameters', function () {
+        
+    });
+});
